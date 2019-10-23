@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/content_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/visible_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ContentMain">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <!--remove visibility to view the bottom bar-->
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_65sdp"
+            android:id="@+id/hiddenBarMainScreen1"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_gradient_horizontal">
+
+            <ImageButton
+                android:id="@+id/play_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/pause_icon" />
+
+            <ImageView
+                android:id="@+id/defaultMusic"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:background="@drawable/default_image"/>
+
+
+            <TextView
+                android:id="@+id/nowPlaying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/defaultMusic"
+                android:layout_toStartOf="@id/play_pause"
+                android:text="@string/now_playing"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#5b5a62" />
+
+            <TextView
+                android:id="@+id/song_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_below="@+id/nowPlaying"
+                android:layout_toEndOf="@+id/defaultMusic"
+                android:layout_toStartOf="@id/play_pause"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/name_of_the_song"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/song_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/who_sang_it"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/defaultMusic"
+                android:layout_toStartOf="@id/play_pause"
+                android:layout_below="@+id/song_title"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/licorice" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#abcdef"
+            android:id="@+id/noSongs"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/no_music"
+                android:textColor="#000000"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/NavigationPanel"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/bg_gradient_horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:id="@+id/song_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/default_image" />
+
+    <Button
+        android:id="@+id/close"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:textAlignment="center"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_alignParentEnd="true"
+        android:text="@string/x"
+        android:background="@drawable/white_circle_icon"
+        android:textColor="@color/licorice"/>
+
+    <TextView
+        android:id="@+id/song_title_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/close"
+        android:layout_toEndOf="@+id/song_image"
+        android:duplicateParentState="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxWidth="@dimen/_180sdp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/name_of_the_song"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/licorice">
+        <requestFocus
+            android:duplicateParentState="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/song_artist_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/song_title_nav"
+        android:layout_toEndOf="@+id/song_image"
+        android:layout_toStartOf="@+id/close"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:duplicateParentState="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxWidth="@dimen/_190sdp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/who_sang_it"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/licorice">
+
+        <requestFocus
+            android:duplicateParentState="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/song_artist_nav"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/song_image"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/previousbutton_not"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_13sdp"
+            android:layout_toLeftOf="@+id/playpausebutton"
+            android:background="@drawable/play_previous_icon"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
+
+        <ImageView
+            android:id="@+id/playpausebutton_not"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
+
+
+        <ImageButton
+            android:id="@+id/nextbutton_not"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_13sdp"
+            android:layout_toRightOf="@+id/playpausebutton"
+            android:background="@drawable/play_next_icon"
+            android:minWidth="0dp"
+            android:minHeight="0dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

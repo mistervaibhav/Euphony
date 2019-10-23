@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ghost_white" >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favourite_Recycler"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/ghost_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!--remove visibility to view the bottom bar-->
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_65sdp"
+        android:id="@+id/hiddenBarFavScreen"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_gradient_horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/play_pause_fav"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:background="@drawable/pause_icon"/>
+
+        <ImageView
+            android:id="@+id/defaultMusic"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:background="@drawable/default_image"/>
+
+        <TextView
+            android:id="@+id/nowPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/defaultMusic"
+            android:layout_toStartOf="@id/play_pause_fav"
+            android:text="@string/now_playing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#5b5a62" />
+
+        <TextView
+            android:id="@+id/song_title_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/nowPlaying"
+            android:layout_toEndOf="@+id/defaultMusic"
+            android:layout_toStartOf="@id/play_pause_fav"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/name_of_the_song"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/song_artist_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/who_sang_it"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/defaultMusic"
+            android:layout_toStartOf="@id/play_pause_fav"
+            android:layout_below="@+id/song_title_fav"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/licorice" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/noFavourites"
+        android:visibility="gone"
+        android:text="@string/you_haven_t_got_any_favourites"
+        android:layout_centerInParent="true"
+        android:textColor="@color/ghost_white"/>
+</RelativeLayout>
